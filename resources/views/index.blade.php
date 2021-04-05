@@ -599,10 +599,10 @@
                                                         <img src="https://image.tmdb.org/t/p/w500/{{$popularCeleb['profile_path']}}" alt="" width="185" height="284">
                                                     </div>
                                                     <div class="hvr-inner">
-                                                        <a  href="{{url('tv/'.$popularCeleb['id'].'')}}"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+                                                        <a  href="{{url('person/'.$popularCeleb['id'].'')}}"> Read more <i class="ion-android-arrow-dropright"></i> </a>
                                                     </div>
                                                     <div class="title-in">
-                                                        <h6><a href="{{url('tv/'.$popularCeleb['id'].'')}}">{{$popularCeleb['name']}}</a></h6>
+                                                        <h6><a href="{{url('person/'.$popularCeleb['id'].'')}}">{{$popularCeleb['name']}}</a></h6>
                                                         <p><i class="ion-android-star"></i><span>{{$popularCeleb['popularity']}}</span></p>
                                                     </div>
                                                 </div>
