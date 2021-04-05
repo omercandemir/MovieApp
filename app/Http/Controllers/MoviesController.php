@@ -12,6 +12,7 @@ class MoviesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
@@ -49,7 +50,7 @@ class MoviesController extends Controller
             return [$genre['id'] => $genre['name']];
         });
 
-        // dd($genresFilm);
+        // dd($popularMovies);
         return view('index', [
             'popularMovies'     => $popularMovies,
             'upcomingMovies'    => $upcomingMovies,
@@ -93,7 +94,17 @@ class MoviesController extends Controller
      */
     public function show($id)
     {
-        //
+        $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
+
+        $movieDetail = Http::get('https://api.themoviedb.org/3/movie/'.$id.''.$apikey.'&append_to_response=videos,images,credits,recommendations')
+            ->json();
+        
+        if (!array_key_exists('id', $movieDetail)) {
+            abort(404);
+        }
+        return view('movie-detail', [
+            'movieDetail'   => $movieDetail,
+        ]);
     }
 
     /**
