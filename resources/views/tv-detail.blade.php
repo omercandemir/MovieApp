@@ -1,6 +1,13 @@
 @extends('components.master')
 @section('title')
-	{{$tvDetail['name']}}
+	<?php
+		if (!array_key_exists('name', $tvDetail)) {
+			echo "Series";
+		}
+		else {
+			echo $tvDetail['name'];		
+		}
+	?>
 @endsection
 @section('content')
 <div class="hero mv-single-hero" style="background-size: cover;">
@@ -25,7 +32,7 @@
 					<div class="movie-btn">	
 						<div class="btn-transform transform-vertical red">
 							<div><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i> Watch Trailer</a></div>
-							<div><a href="https://www.youtube.com/embed/<?php if(!array_key_exists('key', $tvDetail['videos']['results'][0])){ } else{ echo $tvDetail['videos']['results'][0]['key']; } ?>" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
+							<div><a href="https://www.youtube.com/embed/<?php if(!array_key_exists('key', $tvDetail['videos']['results'])){ } else{ echo $tvDetail['videos']['results']['key']; } ?>" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
 						</div>
 						<div class="btn-transform transform-vertical">
 							<div><a href="#" class="item item-1 yellowbtn"> <i class="ion-card"></i> Buy ticket</a></div>
@@ -52,8 +59,7 @@
 					<div class="movie-rate">
 						<div class="rate">
 							<i class="ion-android-star"></i>
-							<p><span>8.1</span> /10<br>
-								<span class="rv">56 Reviews</span>
+							<p><span>{{$tvDetail['vote_average']}}</span> /10<br>
 							</p>
 						</div>
 						<div class="rate-star">
@@ -101,8 +107,8 @@
                                                     @if ($loop->index < 6)								
                                                         <div class="cast-it">
                                                             <div class="cast-left">
-                                                                <img src="images/uploads/cast1.jpg" alt="">
-                                                                <a href="#">{{$tvCast['name']}}</a>
+                                                                <img src="https://image.tmdb.org/t/p/w500/{{$tvCast['profile_path']}}" alt="" height="40px" width="40px">
+                                                                <a href="{{url('person/'.$tvCast['id'].'')}}">{{$tvCast['name']}}</a>
                                                             </div>
                                                             <p>{{$tvCast['character']}}</p>
                                                         </div>
@@ -166,7 +172,7 @@
                                                     <div class="cast-it">
                                                         <div class="cast-left">
                                                             <img src="https://image.tmdb.org/t/p/w500/{{$fullCast['profile_path']}}" alt="{{$tvDetail['name']}}" height="40px" width="40px">
-                                                            <a href="#">{{$fullCast['name']}}</a>
+                                                            <a href="{{url('person/'.$fullCast['id'].'')}}">{{$fullCast['name']}}</a>
                                                         </div>
                                                         <p>{{$fullCast['character']}}</p>
                                                     </div>

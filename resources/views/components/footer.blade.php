@@ -57,4 +57,5 @@
 			<p><a href="#" id="back-to-top">Back to top  <i class="ion-ios-arrow-thin-up"></i></a></p>
 		</div>
 	</div>
+	@livewireScripts
 </footer>

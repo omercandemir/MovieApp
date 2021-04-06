@@ -73,7 +73,7 @@
                                                                 </div>
                                                                 
                                                             </div>
-                                                            <p>@if($celebCast['release_date'] == null) - @else {{$celebCast['release_date']}} @endif</p>
+                                                            <p>@if($celebCast['character'] == null) - @else {{$celebCast['character']}} @endif</p>
                                                         </div>
                                                     @endif
                                                 @endforeach
@@ -133,7 +133,7 @@
                                                         </div>
                                                         
                                                     </div>
-                                                    <p>@if($celebMovieCast['release_date'] == null) - @else {{$celebMovieCast['release_date']}} @endif</p>
+                                                    <p>@if($celebMovieCast['character'] == null) - @else {{$celebMovieCast['character']}} @endif</p>
                                                 </div>
                                             @endforeach
                                             <h3>Credits</h3>

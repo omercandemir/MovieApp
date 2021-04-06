@@ -16,6 +16,7 @@
 	<meta name="keywords" content="">
 	<meta name="author" content="">
 	<link rel="profile" href="#">
+    <link href="{{asset('images/favicon.png')}}" rel="icon">
 
     <!--Google Font-->
     <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Dosis:400,700,500|Nunito:300,400,600' />
@@ -26,12 +27,13 @@
 	<!-- CSS files -->
 	<link rel="stylesheet" href="css/plugins.css">
 	<link rel="stylesheet" href="css/style.css">
-
+    @livewireStyles
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
 </head>
 <body>
 <!--preloading-->
 <div id="preloader">
-    <img class="logo" src="images/logo1.png" alt="" width="119" height="58">
+    <img class="logo" src="images/logo1.png" alt="" width="200" height="100">
     <div id="status">
         <span></span>
         <span></span>
@@ -132,7 +134,7 @@
 							<span></span>
 						</div>
 				    </div>
-				    <a href="{{url('/')}}"><img class="logo" src="images/logo1.png" alt="" width="119" height="58"></a>
+				    <a href="{{url('/')}}"><img class="logo" src="images/logo1.png" alt="" width="200" height="58"></a>
 			    </div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
@@ -213,13 +215,7 @@
 	    </nav>
 	    
 	    <!-- top search form -->
-	    <div class="top-search">
-	    	<select>
-				<option value="united">TV show</option>
-				<option value="saab">Others</option>
-			</select>
-			<input type="text" placeholder="Search for a movie, TV Show or celebrity that you are looking for">
-	    </div>
+        <livewire:search-dropdown>
 	</div>
 </header>
 <!-- END | Header -->

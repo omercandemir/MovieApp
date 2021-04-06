@@ -25,7 +25,7 @@
 					<div class="movie-btn">	
 						<div class="btn-transform transform-vertical red">
 							<div><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i> Watch Trailer</a></div>
-							<div><a href="https://www.youtube.com/embed/<?php if(!array_key_exists('key', $movieDetail['videos']['results'][0])){ } else{ echo $movieDetail['videos']['results'][0]['key']; } ?>" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
+							<div><a href="https://www.youtube.com/embed/<?php if(!array_key_exists('key', $movieDetail['videos']['results'])){ } else{ echo $movieDetail['videos']['results']['key']; } ?>" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
 						</div>
 						<div class="btn-transform transform-vertical">
 							<div><a href="#" class="item item-1 yellowbtn"> <i class="ion-card"></i> Buy ticket</a></div>
@@ -52,8 +52,7 @@
 					<div class="movie-rate">
 						<div class="rate">
 							<i class="ion-android-star"></i>
-							<p><span>8.1</span> /10<br>
-								<span class="rv">56 Reviews</span>
+							<p><span>{{$movieDetail['vote_average']}}</span> /10<br>
 							</p>
 						</div>
 						<div class="rate-star">
@@ -101,8 +100,8 @@
                                                     @if ($loop->index < 6)								
                                                         <div class="cast-it">
                                                             <div class="cast-left">
-                                                                <img src="images/uploads/cast1.jpg" alt="">
-                                                                <a href="#">{{$movieCast['name']}}</a>
+                                                                <img src="<?php if($movieCast['profile_path'] == null){ echo asset('images/uploads/ava2.jpg'); } else{ echo 'https://image.tmdb.org/t/p/w500/'.$movieCast['profile_path'].''; } ?>" alt="{{$movieCast['name']}}" height="40px" width="40px">
+                                                                <a href="{{url('person/'.$movieCast['id'].'')}}">{{$movieCast['name']}}</a>
                                                             </div>
                                                             <p>{{$movieCast['character']}}</p>
                                                         </div>
@@ -139,7 +138,7 @@
 						            		</div>
 											<div class="sb-it">
 						            			<h6>Run Time:</h6>
-						            			<p>{{$movieDetail['runtime']}}</p>
+						            			<p>{{$movieDetail['runtime']}} mn.</p>
 						            		</div>
 						            		<div class="sb-it">
 						            			<h6>Spoken Language:</h6>
@@ -165,8 +164,8 @@
                                                 @if ($loop->index < 20)			
                                                     <div class="cast-it">
                                                         <div class="cast-left">
-                                                            <img src="https://image.tmdb.org/t/p/w500/{{$fullCast['profile_path']}}" alt="{{$movieDetail['title']}}" height="40px" width="40px">
-                                                            <a href="#">{{$fullCast['name']}}</a>
+                                                            <img src="<?php if($fullCast['profile_path'] == null){ echo asset('images/uploads/ava2.jpg'); } else{ echo 'https://image.tmdb.org/t/p/w500/'.$fullCast['profile_path'].''; } ?>" alt="{{$movieDetail['title']}}" height="40px" width="40px">
+                                                            <a href="{{url('person/'.$fullCast['id'].'')}}">{{$fullCast['name']}}</a>
                                                         </div>
                                                         <p>{{$fullCast['character']}}</p>
                                                     </div>
