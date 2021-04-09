@@ -88,9 +88,7 @@ class MoviesController extends Controller
             if ($option == 'popular') {
                 $popularMovies = Http::get('https://api.themoviedb.org/3/movie/popular'.$apikey.'')
                     ->json()['results'];
-                $pagination = Http::get('https://api.themoviedb.org/3/movie/popular'.$apikey.'')
-                    ->json();
-                dump($pagination);
+                // dump($pagination);
                 return view('movie-list', [
                     'option'        => $option,
                     'popularMovies' => $popularMovies,

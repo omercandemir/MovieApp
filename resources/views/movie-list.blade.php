@@ -26,7 +26,7 @@
 			</div>
 			<div class="col-md-8 col-sm-12 col-xs-12">
 				<div id="app">
-					<movie-card></movie-card>
+					<livewire:movie-card>
 				</div>
 				<!-- VueJs Code -->
 			</div>

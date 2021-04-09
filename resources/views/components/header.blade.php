@@ -141,10 +141,10 @@
 							movies<i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
 							<ul class="dropdown-menu level1">
-								<li><a href="#">Popular</a></li>			
-								<li><a href="movielist.html">Now Playing</a></li>
-								<li><a href="moviesingle.html">Upcoming</a></li>
-								<li class="it-last"><a href="seriessingle.html">Top Rated</a></li>
+								<li><a href="{{url('movie/popular')}}">Popular</a></li>			
+								<li><a href="{{url('movie/now-playing')}}">Now Playing</a></li>
+								<li><a href="{{url('movie/upcoming')}}">Upcoming</a></li>
+								<li class="it-last"><a href="{{url('movie/top-rated')}}">Top Rated</a></li>
 							</ul>
 						</li>
                         <li class="dropdown first">
