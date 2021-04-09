@@ -3,7 +3,7 @@
         <select wire:model="option">
             <option selected="selected" value="3">Movie</option>
             <option value="1">TV Show</option>
-            <option value="2">Person</option>
+            <option value="2">Actor</option>
         </select>    
         <input wire:model.debounce.500ms="search"
         type="text"

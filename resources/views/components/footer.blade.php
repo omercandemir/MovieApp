@@ -2,6 +2,7 @@
 <script src="{{asset('js/plugins.js')}}"></script>
 <script src="{{asset('js/plugins2.js')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
+<script src="{{asset('js/apple.js')}}"></script>
 <footer class="ht-footer">
 	<div class="container">
 		<div class="flex-parent-ft">

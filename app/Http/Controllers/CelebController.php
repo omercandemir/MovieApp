@@ -54,43 +54,9 @@ class CelebController extends Controller
         if (!array_key_exists('id', $celebDetail)) {
             abort(404);
         }
-        // dump($celebDetail);
+        // dump($celebDetail['movie_credits']['cast']);
         return view('celeb-detail', [
             'celebDetail'   => $celebDetail,
         ]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

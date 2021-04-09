@@ -65,33 +65,6 @@ class MoviesController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
@@ -107,37 +80,40 @@ class MoviesController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function list($option)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $options = ['popular', 'now-playing', 'upcoming', 'top-rated'];
+        if (in_array($option, $options)) {
+            $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
+            if ($option == 'popular') {
+                $popularMovies = Http::get('https://api.themoviedb.org/3/movie/popular'.$apikey.'')
+                    ->json()['results'];
+                $pagination = Http::get('https://api.themoviedb.org/3/movie/popular'.$apikey.'')
+                    ->json();
+                dump($pagination);
+                return view('movie-list', [
+                    'option'        => $option,
+                    'popularMovies' => $popularMovies,
+                ]);
+            }
+            elseif ($option == 'now-playing') {
+                return view('movie-list', [
+                    'option'    => $option,
+                ]);
+            }
+            elseif ($option == 'upcoming') {
+                return view('movie-list',[
+                    'option'    => $option,
+                ]);
+            }
+            else { // top-rated
+                return view('movie-list', [
+                    'option'    => $option,
+                ]);
+            }
+        }
+        else {
+            return abort(404);
+        }
     }
 }

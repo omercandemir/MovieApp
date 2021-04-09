@@ -32,7 +32,7 @@
 					<div class="movie-btn">	
 						<div class="btn-transform transform-vertical red">
 							<div><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i> Watch Trailer</a></div>
-							<div><a href="https://www.youtube.com/embed/<?php if(!array_key_exists('key', $tvDetail['videos']['results'])){ } else{ echo $tvDetail['videos']['results']['key']; } ?>" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
+							<div><a href="https://www.youtube.com/embed/<?php if(empty($tvDetail['videos']['results'])){ } else{ echo $tvDetail['videos']['results'][0]['key']; } ?>" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
 						</div>
 						<div class="btn-transform transform-vertical">
 							<div><a href="#" class="item item-1 yellowbtn"> <i class="ion-card"></i> Buy ticket</a></div>

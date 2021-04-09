@@ -68,7 +68,7 @@
                                                             <div class="cast-left cebleb-film">
                                                                 <img src="images/uploads/film1.jpg" alt="">
                                                                 <div>
-                                                                    <a href="#">{{$celebCast['title']}} </a>
+                                                                    <a href="{{url('movies/'.$celebCast['id'].'')}}">{{$celebCast['title']}} </a>
                                                                     <p class="time">@if($celebCast['character'] == null) - @else {{$celebCast['character']}} @endif</p>
                                                                 </div>
                                                                 
@@ -128,7 +128,7 @@
                                                     <div class="cast-left cebleb-film">
                                                         <img src="images/uploads/film1.jpg" alt="">
                                                         <div>
-                                                            <a href="#">{{$celebMovieCast['title']}} </a>
+                                                            <a href="{{url('movies/'.$celebMovieCast['id'].'')}}">{{$celebMovieCast['title']}} </a>
                                                             <p class="time">@if($celebMovieCast['character'] == null) - @else {{$celebMovieCast['character']}} @endif</p>
                                                         </div>
                                                         
@@ -146,7 +146,7 @@
                                                             <p class="time">{{$celebMovieCrew['job']}}</p>
                                                         </div>
                                                     </div>
-                                                    <p>{{$celebMovieCrew['release_date']}}</p>
+                                                    <p>{{$celebMovieCrew['job']}}</p>
                                                 </div>
                                             @endforeach
 										</div>
