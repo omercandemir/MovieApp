@@ -27,8 +27,11 @@ Route::get('/tvshow', function(){
     return redirect(url('tvshow/popular')); // redirect popularm movie
 });
 
-Route::get('/movie/{option}', [MoviesController::class, 'list'])->name('movies.list');
-Route::get('/tvshow/{option}', [TvController::class, 'list'])->name('tvshow.list');
+Route::get('/movie/popular/{page}', [MoviesController::class, 'popular'])->name('movies.popular');
+Route::get('/movie/now-playing/{page}', [MoviesController::class, 'now'])->name('movies.now');
+Route::get('/movie/upcoming/{page}', [MoviesController::class, 'upcoming'])->name('movies.upcoming');
+Route::get('/movie/top-rated/{page}', [MoviesController::class, 'rated'])->name('movies.rated');
+
 
 // DETAIL 
 Route::get('/movies/{id}', [MoviesController::class, 'show'])->name('movies.show'); // movie detail

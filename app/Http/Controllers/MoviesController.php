@@ -80,35 +80,104 @@ class MoviesController extends Controller
         ]);
     }
 
-    public function list($option)
+    public function popular($page)
     {
-        $options = ['popular', 'now-playing', 'upcoming', 'top-rated'];
-        if (in_array($option, $options)) {
-            $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
-            if ($option == 'popular') {
-                $popularMovies = Http::get('https://api.themoviedb.org/3/movie/popular'.$apikey.'')
+        $pages = [1, 2, 3, 4, 5];
+        $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
+        if (in_array($page, $pages)) {
+            if ($page == 1) {
+                $movies = Http::get('https://api.themoviedb.org/3/movie/popular'.$apikey.'')
                     ->json()['results'];
-                // dump($pagination);
                 return view('movie-list', [
-                    'option'        => $option,
-                    'popularMovies' => $popularMovies,
+                    'movies' => $movies,
                 ]);
             }
-            elseif ($option == 'now-playing') {
+            else {
+                $movies = Http::get('https://api.themoviedb.org/3/movie/popular'.$apikey.'&page='.$page.'')
+                    ->json()['results'];
                 return view('movie-list', [
-                    'option'    => $option,
+                    'movies' => $movies,
                 ]);
             }
-            elseif ($option == 'upcoming') {
-                return view('movie-list',[
-                    'option'    => $option,
-                ]);
-            }
-            else { // top-rated
+
+        }
+        else {
+            return abort(404);
+        }
+    }
+
+    public function now($page)
+    {
+        $pages = [1, 2, 3, 4, 5];
+        $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
+        if (in_array($page, $pages)) {
+            if ($page == 1) {
+                $movies = Http::get('https://api.themoviedb.org/3/movie/now_playing'.$apikey.'')
+                    ->json()['results'];
                 return view('movie-list', [
-                    'option'    => $option,
+                    'movies' => $movies,
                 ]);
             }
+            else {
+                $movies = Http::get('https://api.themoviedb.org/3/movie/now_playing'.$apikey.'&page='.$page.'')
+                    ->json()['results'];
+                return view('movie-list', [
+                    'movies' => $movies,
+                ]);
+            }
+
+        }
+        else {
+            return abort(404);
+        }
+    }
+
+    public function upcoming($page)
+    {
+        $pages = [1, 2, 3, 4, 5];
+        $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
+        if (in_array($page, $pages)) {
+            if ($page == 1) {
+                $movies = Http::get('https://api.themoviedb.org/3/movie/upcoming'.$apikey.'')
+                    ->json()['results'];
+                return view('movie-list', [
+                    'movies' => $movies,
+                ]);
+            }
+            else {
+                $movies = Http::get('https://api.themoviedb.org/3/movie/upcoming'.$apikey.'&page='.$page.'')
+                    ->json()['results'];
+                return view('movie-list', [
+                    'movies' => $movies,
+                ]);
+            }
+
+        }
+        else {
+            return abort(404);
+        }
+    }
+
+    public function rated($page)
+    {
+        $pages = [1, 2, 3, 4, 5];
+        $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
+        if (in_array($page, $pages)) {
+            if ($page == 1) {
+                $movies = Http::get('https://api.themoviedb.org/3/movie/top_rated'.$apikey.'')
+                    ->json()['results'];
+                return view('movie-list', [
+                    'movies' => $movies,
+                ]);
+            }
+            else {
+                $movies = Http::get('https://api.themoviedb.org/3/movie/top_rated'.$apikey.'&page='.$page.'')
+                    ->json()['results'];
+                return view('movie-list', [
+                    'movies' => $movies,
+                ]);
+            }
+
         }
         else {
             return abort(404);
