@@ -23,14 +23,16 @@ Route::get('/movie', function(){
     return redirect(url('movie/popular')); // redirect popularm movie
 });
 
-Route::get('/tvshow', function(){
-    return redirect(url('tvshow/popular')); // redirect popularm movie
-});
-
 Route::get('/movie/popular/{page}', [MoviesController::class, 'popular'])->name('movies.popular');
 Route::get('/movie/now-playing/{page}', [MoviesController::class, 'now'])->name('movies.now');
 Route::get('/movie/upcoming/{page}', [MoviesController::class, 'upcoming'])->name('movies.upcoming');
 Route::get('/movie/top-rated/{page}', [MoviesController::class, 'rated'])->name('movies.rated');
+
+Route::get('/tvshow/popular/{page}', [MoviesController::class, 'popular'])->name('movies.popular');
+Route::get('/tvshow/now-playing/{page}', [MoviesController::class, 'now'])->name('movies.now');
+Route::get('/tvshow/upcoming/{page}', [MoviesController::class, 'upcoming'])->name('movies.upcoming');
+Route::get('/tvshow/top-rated/{page}', [MoviesController::class, 'rated'])->name('movies.rated');
+
 
 
 // DETAIL 
@@ -38,3 +40,21 @@ Route::get('/movies/{id}', [MoviesController::class, 'show'])->name('movies.show
 Route::get('/tv/{id}', [TvController::class, 'show'])->name('tv.show'); // tv shows detail
 Route::get('/person/{id}', [CelebController::class, 'show'])->name('celeb.show'); // celebs detail
 
+
+// REDIRECTS    
+
+Route::get('/movie', function(){
+    return redirect(url('movie/popular/1')); // redirect popularm movie
+});
+
+Route::get('/movie/popular', function(){
+    return redirect(url('movie/popular/1')); // redirect popularm movie
+});
+
+Route::get('/tvshow', function(){
+    return redirect(url('tvshow/popular/1')); // redirect popularm movie
+});
+
+Route::get('/tvshow/popular', function(){
+    return redirect(url('tvshow/popular/1')); // redirect popularm movie
+});

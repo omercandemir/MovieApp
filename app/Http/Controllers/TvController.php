@@ -7,11 +7,12 @@ use Illuminate\Support\Facades\Http;
 
 class TvController extends Controller
 {
+    public $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
+
     public function show($id)
     {
-        $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
         
-        $tvDetail = Http::get('https://api.themoviedb.org/3/tv/'.$id.''.$apikey.'&append_to_response=videos,images,credits,recommendations')
+        $tvDetail = Http::get('https://api.themoviedb.org/3/tv/'.$id.''.$this->apikey.'&append_to_response=videos,images,credits,recommendations')
             ->json();
         // dump($tvDetail);
         return view('tv-detail', [
@@ -22,6 +23,6 @@ class TvController extends Controller
 
     public function list($option)
     {
-        $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
+        # code...
     }
 }

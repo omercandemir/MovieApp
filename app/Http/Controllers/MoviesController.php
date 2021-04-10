@@ -13,37 +13,38 @@ class MoviesController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
+    
     public function index()
     {
-        $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
-        $popularMovies = Http::get('https://api.themoviedb.org/3/movie/popular'.$apikey.'')
+        $popularMovies = Http::get('https://api.themoviedb.org/3/movie/popular'.$this->apikey.'')
             ->json()['results'];
 
-        $upcomingMovies = Http::get('https://api.themoviedb.org/3/movie/upcoming'.$apikey.'')
+        $upcomingMovies = Http::get('https://api.themoviedb.org/3/movie/upcoming'.$this->apikey.'')
             ->json()['results'];
         
-        $ratedMovies = Http::get('https://api.themoviedb.org/3/movie/top_rated'.$apikey.'')
+        $ratedMovies = Http::get('https://api.themoviedb.org/3/movie/top_rated'.$this->apikey.'')
             ->json()['results'];
         
-        $playingMovies = Http::get('https://api.themoviedb.org/3/movie/now_playing'.$apikey.'')
+        $playingMovies = Http::get('https://api.themoviedb.org/3/movie/now_playing'.$this->apikey.'')
             ->json()['results'];
 
-        $popularTVs = Http::get('https://api.themoviedb.org/3/tv/popular'.$apikey.'')
+        $popularTVs = Http::get('https://api.themoviedb.org/3/tv/popular'.$this->apikey.'')
             ->json()['results'];
 
-        $ratedTVs = Http::get('https://api.themoviedb.org/3/tv/top_rated'.$apikey.'')
+        $ratedTVs = Http::get('https://api.themoviedb.org/3/tv/top_rated'.$this->apikey.'')
             ->json()['results'];
         
-        $onairTVs = Http::get('https://api.themoviedb.org/3/tv/on_the_air'.$apikey.'')
+        $onairTVs = Http::get('https://api.themoviedb.org/3/tv/on_the_air'.$this->apikey.'')
         ->json()['results'];
 
-        $todayairTVs = Http::get('https://api.themoviedb.org/3/tv/airing_today'.$apikey.'')
+        $todayairTVs = Http::get('https://api.themoviedb.org/3/tv/airing_today'.$this->apikey.'')
         ->json()['results'];
         
-        $popularCelebs = Http::get('https://api.themoviedb.org/3/person/popular'.$apikey.'')
+        $popularCelebs = Http::get('https://api.themoviedb.org/3/person/popular'.$this->apikey.'')
             ->json()['results'];
 
-        $genresArray = Http::get('https://api.themoviedb.org/3/genre/movie/list'.$apikey.'')
+        $genresArray = Http::get('https://api.themoviedb.org/3/genre/movie/list'.$this->apikey.'')
             ->json()['genres'];
 
         $genres = collect($genresArray)->mapWithKeys(function($genre) {
@@ -67,9 +68,8 @@ class MoviesController extends Controller
 
     public function show($id)
     {
-        $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
 
-        $movieDetail = Http::get('https://api.themoviedb.org/3/movie/'.$id.''.$apikey.'&append_to_response=videos,images,credits,recommendations')
+        $movieDetail = Http::get('https://api.themoviedb.org/3/movie/'.$id.''.$this->apikey.'&append_to_response=videos,images,credits,recommendations')
             ->json();
         
         if (!array_key_exists('id', $movieDetail)) {
@@ -83,17 +83,16 @@ class MoviesController extends Controller
     public function popular($page)
     {
         $pages = [1, 2, 3, 4, 5];
-        $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
         if (in_array($page, $pages)) {
             if ($page == 1) {
-                $movies = Http::get('https://api.themoviedb.org/3/movie/popular'.$apikey.'')
+                $movies = Http::get('https://api.themoviedb.org/3/movie/popular'.$this->apikey.'')
                     ->json()['results'];
                 return view('movie-list', [
                     'movies' => $movies,
                 ]);
             }
             else {
-                $movies = Http::get('https://api.themoviedb.org/3/movie/popular'.$apikey.'&page='.$page.'')
+                $movies = Http::get('https://api.themoviedb.org/3/movie/popular'.$this->apikey.'&page='.$page.'')
                     ->json()['results'];
                 return view('movie-list', [
                     'movies' => $movies,
@@ -109,17 +108,16 @@ class MoviesController extends Controller
     public function now($page)
     {
         $pages = [1, 2, 3, 4, 5];
-        $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
         if (in_array($page, $pages)) {
             if ($page == 1) {
-                $movies = Http::get('https://api.themoviedb.org/3/movie/now_playing'.$apikey.'')
+                $movies = Http::get('https://api.themoviedb.org/3/movie/now_playing'.$this->apikey.'')
                     ->json()['results'];
                 return view('movie-list', [
                     'movies' => $movies,
                 ]);
             }
             else {
-                $movies = Http::get('https://api.themoviedb.org/3/movie/now_playing'.$apikey.'&page='.$page.'')
+                $movies = Http::get('https://api.themoviedb.org/3/movie/now_playing'.$this->apikey.'&page='.$page.'')
                     ->json()['results'];
                 return view('movie-list', [
                     'movies' => $movies,
@@ -135,17 +133,16 @@ class MoviesController extends Controller
     public function upcoming($page)
     {
         $pages = [1, 2, 3, 4, 5];
-        $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
         if (in_array($page, $pages)) {
             if ($page == 1) {
-                $movies = Http::get('https://api.themoviedb.org/3/movie/upcoming'.$apikey.'')
+                $movies = Http::get('https://api.themoviedb.org/3/movie/upcoming'.$this->apikey.'')
                     ->json()['results'];
                 return view('movie-list', [
                     'movies' => $movies,
                 ]);
             }
             else {
-                $movies = Http::get('https://api.themoviedb.org/3/movie/upcoming'.$apikey.'&page='.$page.'')
+                $movies = Http::get('https://api.themoviedb.org/3/movie/upcoming'.$this->apikey.'&page='.$page.'')
                     ->json()['results'];
                 return view('movie-list', [
                     'movies' => $movies,
@@ -161,17 +158,16 @@ class MoviesController extends Controller
     public function rated($page)
     {
         $pages = [1, 2, 3, 4, 5];
-        $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
         if (in_array($page, $pages)) {
             if ($page == 1) {
-                $movies = Http::get('https://api.themoviedb.org/3/movie/top_rated'.$apikey.'')
+                $movies = Http::get('https://api.themoviedb.org/3/movie/top_rated'.$this->apikey.'')
                     ->json()['results'];
                 return view('movie-list', [
                     'movies' => $movies,
                 ]);
             }
             else {
-                $movies = Http::get('https://api.themoviedb.org/3/movie/top_rated'.$apikey.'&page='.$page.'')
+                $movies = Http::get('https://api.themoviedb.org/3/movie/top_rated'.$this->apikey.'&page='.$page.'')
                     ->json()['results'];
                 return view('movie-list', [
                     'movies' => $movies,
