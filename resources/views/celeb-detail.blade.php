@@ -23,7 +23,7 @@
 		<div class="row ipad-width">
 			<div class="col-md-4 col-sm-12 col-xs-12">
 				<div class="mv-ceb">
-					<img src="https://image.tmdb.org/t/p/w500/{{$celebDetail['profile_path']}}" alt="{{$celebDetail['name']}}">
+					<img src="@if ($celebDetail['profile_path'] == null) {{asset('images/uploads/cebsingle2.png')}} @else https://image.tmdb.org/t/p/w500/{{$celebDetail['profile_path']}} @endif" alt="{{$celebDetail['name']}}" width="330px" height="495px">
 				</div>
 			</div>
 			<div class="col-md-8 col-sm-12 col-xs-12">

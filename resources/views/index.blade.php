@@ -265,7 +265,7 @@
                     </div>
                     <div class="tabs">
                         <ul class="tab-links">
-                            <li class="active"><a href="">#Popular</a></li>                     
+                            <li class="active"><a href="#">#Popular</a></li>                     
                         </ul>
                         <div class="tab-content">
                             <div id="tab1" class="tab active">
@@ -300,7 +300,7 @@
                 <div class="col-md-12">
                     <div class="tabs">
                         <ul class="tab-links">
-                            <li class="active"><a href=""> #Coming Soon</a></li>                      
+                            <li class="active"><a href="#"> #Coming Soon</a></li>                      
                         </ul>
                         <div class="tab-content">
                             <div id="tab3" class="tab active">
@@ -334,7 +334,7 @@
                 <div class="col-md-12">
                     <div class="tabs">
                         <ul class="tab-links">
-                            <li class="active"><a href=""> #Top Rated Movies</a></li>                      
+                            <li class="active"><a href="#"> #Top Rated Movies</a></li>                      
                         </ul>
                         <div class="tab-content">
                             <div id="tab3" class="tab active">
@@ -368,7 +368,7 @@
                 <div class="col-md-12">
                     <div class="tabs">
                         <ul class="tab-links">
-                            <li class="active"><a href=""> #Playing Movies</a></li>                      
+                            <li class="active"><a href="#"> #Playing Movies</a></li>                      
                         </ul>
                         <div class="tab-content">
                             <div id="tab4" class="tab active">
@@ -406,7 +406,7 @@
                     </div>
                     <div class="tabs">
                         <ul class="tab-links-2">
-                            <li class="active"><a href="#tab21"> #Popular TV</a></li>                    
+                            <li class="active"><a href="#"> #Popular TV</a></li>                    
                         </ul>
                         <div class="tab-content">
                             <div id="tab21" class="tab active">
@@ -440,7 +440,7 @@
                 <div class="col-md-12">
                     <div class="tabs">
                         <ul class="tab-links-2">
-                            <li class="active"><a href=""> #Top Rated TV</a></li>                      
+                            <li class="active"><a href="#"> #Top Rated TV</a></li>                      
                         </ul>
                         <div class="tab-content">
                             <div id="tab21" class="tab active">
@@ -474,7 +474,7 @@
                 <div class="col-md-12">
                     <div class="tabs">
                         <ul class="tab-links-2">
-                            <li class="active"><a href=""> #On Air TV</a></li>                      
+                            <li class="active"><a href="#"> #On Air TV</a></li>                      
                         </ul>
                         <div class="tab-content">
                             <div id="tab21" class="tab active">
@@ -508,7 +508,7 @@
                 <div class="col-md-12">
                     <div class="tabs">
                         <ul class="tab-links-2">
-                            <li class="active"><a href=""> #Today Air TV</a></li>                      
+                            <li class="active"><a href="#"> #Today Air TV</a></li>                      
                         </ul>
                         <div class="tab-content">
                             <div id="tab21" class="tab active">
@@ -541,7 +541,7 @@
                 </div>
             </div>
             <div class="ads">
-                <img src="images/uploads/ads2.png" alt="" width="728" height="106">
+                <img src="images/uploads/ads2.png" alt="ads" width="728" height="106">
             </div>
             <div class="col-md-12">
                 <div class="tabs">
