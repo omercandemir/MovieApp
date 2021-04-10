@@ -24,7 +24,7 @@ class MovieCard extends Component
                 ]);
             }
             else {
-                $movies = Http::get('https://api.themoviedb.org/3/movie/popular'.$apikey.'')
+                $movies = Http::get('https://api.themoviedb.org/3/movie/popular'.$apikey.'&page=2')
                     ->json()['results'];
                 return view('livewire.movie-card', [
                     'movies'    => $movies,

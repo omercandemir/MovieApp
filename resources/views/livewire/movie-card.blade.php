@@ -15,6 +15,7 @@
             </div>
         @endforeach
     </div>
+    <?php dump($movies) ?>
     <div class="topbar-filter">
         <div class="pagination2">
             @if ($this->page != 1)
