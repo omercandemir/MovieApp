@@ -158,13 +158,13 @@
 						</li>
                         <li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							TV Shows<i class="fa fa-angle-down" aria-hidden="true"></i>
+							Series<i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
 							<ul class="dropdown-menu level1">
-								<li><a href="#">Popular</a></li>			
-								<li><a href="movielist.html">Airing Today</a></li>
-								<li><a href="moviesingle.html">On TV</a></li>
-								<li class="it-last"><a href="seriessingle.html">Top Rated</a></li>
+								<li><a href="{{url('series/popular')}}">Popular</a></li>			
+								<li><a href="{{url('series/airing-today')}}">Airing Today</a></li>
+								<li><a href="{{url('series/on-tv')}}">On TV</a></li>
+								<li class="it-last"><a href="{{url('series/top-rated')}}">Top Rated</a></li>
 							</ul>
 						</li>
 						<li class="dropdown first">
@@ -401,12 +401,12 @@
                 </div>
                 <div class="col-md-12">
                     <div class="title-hd">
-                        <h2>on tv</h2>
+                        <h2>Series</h2>
                         <a href="#" class="viewall">View all <i class="ion-ios-arrow-right"></i></a>
                     </div>
                     <div class="tabs">
                         <ul class="tab-links-2">
-                            <li class="active"><a href="#"> #Popular TV</a></li>                    
+                            <li class="active"><a href="#"> #Popular Series</a></li>                    
                         </ul>
                         <div class="tab-content">
                             <div id="tab21" class="tab active">
@@ -440,7 +440,7 @@
                 <div class="col-md-12">
                     <div class="tabs">
                         <ul class="tab-links-2">
-                            <li class="active"><a href="#"> #Top Rated TV</a></li>                      
+                            <li class="active"><a href="#"> #Top Rated Series</a></li>                      
                         </ul>
                         <div class="tab-content">
                             <div id="tab21" class="tab active">
@@ -508,7 +508,7 @@
                 <div class="col-md-12">
                     <div class="tabs">
                         <ul class="tab-links-2">
-                            <li class="active"><a href="#"> #Today Air TV</a></li>                      
+                            <li class="active"><a href="#"> #Today Air Series</a></li>                      
                         </ul>
                         <div class="tab-content">
                             <div id="tab21" class="tab active">

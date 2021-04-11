@@ -21,8 +21,103 @@ class TvController extends Controller
         
     }
 
-    public function list($option)
+    public function popular($page)
     {
-        # code...
+        $pages = [1, 2, 3, 4, 5];
+        if (in_array($page, $pages)) {
+            if ($page == 1) {
+                $tvShows = Http::get('https://api.themoviedb.org/3/tv/popular'.$this->apikey.'')
+                    ->json()['results'];
+                return view('tv-list', [
+                    'tvShows' => $tvShows,
+                ]);
+            }
+            else {
+                $tvShows = Http::get('https://api.themoviedb.org/3/tv/popular'.$this->apikey.'&page='.$page.'')
+                    ->json()['results'];
+                return view('tv-list', [
+                    'tvShows' => $tvShows,
+                ]);
+            }
+
+        }
+        else {
+            return abort(404);
+        }
+    }
+
+    public function airing($page)
+    {
+        $pages = [1, 2, 3, 4, 5];
+        if (in_array($page, $pages)) {
+            if ($page == 1) {
+                $tvShows = Http::get('https://api.themoviedb.org/3/tv/airing_today'.$this->apikey.'')
+                    ->json()['results'];
+                return view('tv-list', [
+                    'tvShows' => $tvShows,
+                ]);
+            }
+            else {
+                $tvShows = Http::get('https://api.themoviedb.org/3/tv/airing_today'.$this->apikey.'&page='.$page.'')
+                    ->json()['results'];
+                return view('tv-list', [
+                    'tvShows' => $tvShows,
+                ]);
+            }
+
+        }
+        else {
+            return abort(404);
+        }
+    }
+
+    public function ontv($page)
+    {
+        $pages = [1, 2, 3, 4, 5];
+        if (in_array($page, $pages)) {
+            if ($page == 1) {
+                $tvShows = Http::get('https://api.themoviedb.org/3/tv/on_the_air'.$this->apikey.'')
+                    ->json()['results'];
+                return view('tv-list', [
+                    'tvShows' => $tvShows,
+                ]);
+            }
+            else {
+                $tvShows = Http::get('https://api.themoviedb.org/3/tv/on_the_air'.$this->apikey.'&page='.$page.'')
+                    ->json()['results'];
+                return view('tv-list', [
+                    'tvShows' => $tvShows,
+                ]);
+            }
+
+        }
+        else {
+            return abort(404);
+        }
+    }
+
+    public function rated($page)
+    {
+        $pages = [1, 2, 3, 4, 5];
+        if (in_array($page, $pages)) {
+            if ($page == 1) {
+                $tvShows = Http::get('https://api.themoviedb.org/3/tv/top_rated'.$this->apikey.'')
+                    ->json()['results'];
+                return view('tv-list', [
+                    'tvShows' => $tvShows,
+                ]);
+            }
+            else {
+                $tvShows = Http::get('https://api.themoviedb.org/3/tv/top_rated'.$this->apikey.'&page='.$page.'')
+                    ->json()['results'];
+                return view('tv-list', [
+                    'tvShows' => $tvShows,
+                ]);
+            }
+
+        }
+        else {
+            return abort(404);
+        }
     }
 }

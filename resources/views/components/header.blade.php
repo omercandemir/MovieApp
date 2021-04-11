@@ -149,13 +149,13 @@
 						</li>
                         <li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							TV Shows<i class="fa fa-angle-down" aria-hidden="true"></i>
+							Series<i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
 							<ul class="dropdown-menu level1">
-								<li><a href="#">Popular</a></li>			
-								<li><a href="movielist.html">Airing Today</a></li>
-								<li><a href="moviesingle.html">On TV</a></li>
-								<li class="it-last"><a href="seriessingle.html">Top Rated</a></li>
+								<li><a href="{{url('series/popular')}}">Popular</a></li>			
+								<li><a href="{{url('series/airing-today')}}">Airing Today</a></li>
+								<li><a href="{{url('series/on-tv')}}">On TV</a></li>
+								<li class="it-last"><a href="{{url('series/top-rated')}}">Top Rated</a></li>
 							</ul>
 						</li>
 						<li class="dropdown first">
