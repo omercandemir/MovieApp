@@ -36,6 +36,8 @@ Route::get('/series/airing-today/{page}', [TvController::class, 'airing'])->name
 Route::get('/series/on-tv/{page}', [TvController::class, 'ontv'])->name('tv.ontv');
 Route::get('/series/top-rated/{page}', [TvController::class, 'rated'])->name('tv.rated');
 
+Route::get('/celeb/{page}', [CelebController::class, 'list'])->name('celeb.list');
+
 // MOVIE REDIRECTS    
 
 Route::get('/movie', function(){
@@ -78,4 +80,8 @@ Route::get('/series/on-tv', function(){
 
 Route::get('/series/top-rated', function(){
     return redirect(url('series/top-rated/1'));
+});
+
+Route::get('/celeb', function(){
+    return redirect(url('celeb/1'));
 });

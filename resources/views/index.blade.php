@@ -168,7 +168,7 @@
 							</ul>
 						</li>
 						<li class="dropdown first">
-							<a class="btn btn-default lv1">celebrities</a>
+							<a class="btn btn-default lv1" href="{{url('celeb')}}">celebrities</a>
 						</li>
 					</ul>
 					<ul class="nav navbar-nav flex-child-menu menu-right">              
