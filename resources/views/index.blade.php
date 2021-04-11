@@ -261,7 +261,6 @@
                 <div class="col-md-12">
                     <div class="title-hd">
                         <h2 style="text-align: center;">in theater</h2>
-                        <a href="#" class="viewall">View all <i class="ion-ios-arrow-right"></i></a>
                     </div>
                     <div class="tabs">
                         <ul class="tab-links">
@@ -291,7 +290,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                <a href="#" class="viewall" style="float: right">View all <i class="ion-ios-arrow-right"></i></a>
+                                <a href="{{url('movie/popular')}}" class="viewall" style="float: right">View all <i class="ion-ios-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -326,7 +325,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                <a href="#" class="viewall" style="float: right">View all <i class="ion-ios-arrow-right"></i></a>
+                                <a href="{{url('movie/upcoming')}}" class="viewall" style="float: right">View all <i class="ion-ios-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -360,7 +359,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                <a href="#" class="viewall" style="float: right">View all <i class="ion-ios-arrow-right"></i></a>
+                                <a href="{{url('movie/top-rated')}}" class="viewall" style="float: right">View all <i class="ion-ios-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -394,7 +393,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                <a href="#" class="viewall" style="float: right">View all <i class="ion-ios-arrow-right"></i></a>
+                                <a href="{{url('movie/top-rated')}}" class="viewall" style="float: right">View all <i class="ion-ios-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -402,7 +401,6 @@
                 <div class="col-md-12">
                     <div class="title-hd">
                         <h2>Series</h2>
-                        <a href="#" class="viewall">View all <i class="ion-ios-arrow-right"></i></a>
                     </div>
                     <div class="tabs">
                         <ul class="tab-links-2">
@@ -432,7 +430,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                <a href="#" class="viewall" style="float: right">View all <i class="ion-ios-arrow-right"></i></a>
+                                <a href="{{url('series/popular')}}" class="viewall" style="float: right">View all <i class="ion-ios-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -466,7 +464,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                <a href="#" class="viewall" style="float: right">View all <i class="ion-ios-arrow-right"></i></a>
+                                <a href="{{url('series/top-rated')}}" class="viewall" style="float: right">View all <i class="ion-ios-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -500,7 +498,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                <a href="#" class="viewall" style="float: right">View all <i class="ion-ios-arrow-right"></i></a>
+                                <a href="{{url('series/on-tv')}}" class="viewall" style="float: right">View all <i class="ion-ios-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -534,7 +532,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                <a href="#" class="viewall" style="float: right">View all <i class="ion-ios-arrow-right"></i></a>
+                                <a href="{{url('series/airing-today')}}" class="viewall" style="float: right">View all <i class="ion-ios-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
