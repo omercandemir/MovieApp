@@ -183,7 +183,7 @@
                                                 <div class="movie-item-style-2">
                                                     <img src="https://image.tmdb.org/t/p/w500/{{$movieRec['poster_path']}}" alt="">
                                                     <div class="mv-item-infor">
-                                                        <h6><a href="{{url('tv/'.$movieRec['id'].'')}}">{{$movieRec['title']}}</a></h6>
+                                                        <h6><a href="{{url('movies/'.$movieRec['id'].'')}}">{{$movieRec['title']}}</a></h6>
                                                         <p class="rate"><i class="ion-android-star"></i><span>{{$movieRec['vote_average']}}</span> /10</p>
                                                         <p class="describe">{{$movieRec['overview']}}</p>
                                                         <p class="run-time"><span>Release: {{$movieRec['release_date']}}</span></p>
