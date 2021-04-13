@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class TvController extends Controller
 {
-    public $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
+    public $apikey = '?api_key=apikey';
 
     public function show($id)
     {
