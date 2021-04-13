@@ -21,14 +21,14 @@ class SearchDropdown extends Component
         }
         elseif ($this->option == 1) {
             if (strlen($this->search >= 2)) {
-                $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
+                $apikey = '?api_key=apikey';
                 $searchResults = Http::get('https://api.themoviedb.org/3/search/tv'.$apikey.'&query='.$this->search.'')
                     ->json()['results'];
             }
         }
         else {
             if (strlen($this->search >= 2)) {
-                $apikey = '?api_key=79930863940382be1c23b82c0913cf22';
+                $apikey = '?api_key=apikey';
                 $searchResults = Http::get('https://api.themoviedb.org/3/search/person'.$apikey.'&query='.$this->search.'')
                     ->json()['results'];
             }     
