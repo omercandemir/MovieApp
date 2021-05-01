@@ -3,3 +3,7 @@
 
 ## Setup
 <p>Download the project, then get an apikey <a href="https://www.themoviedb.org/">from here</a> and follow the App / Http / Controller path. It will be sufficient to write your own api code into the public $apikey variable in CelebController, TvController and MovieController.</p>
+
+## Used technologies
+TMDB Api
+Laravel Livewire
